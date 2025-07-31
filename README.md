@@ -1,27 +1,88 @@
-# AgenciaViajes
+# Agencia Viajes
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
+Proyecto Angular para gestión de destinos y boletos con autenticación y navegación protegida.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Cómo ejecutar el proyecto
 
-## Code scaffolding
+Para ejecutar este proyecto, primero clona el repositorio con:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+git clone https://gitlab.com/tu_usuario/agencia-viajes.git
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Luego entra en la carpeta del proyecto:
 
-## Running unit tests
+cd agencia-viajes
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+Instala las dependencias necesarias con:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+npm install
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Finalmente, ejecuta la aplicación con:
+
+ng serve
+
+
+Y abre en tu navegador la URL:
+
+http://localhost:4200
+
+
+---
+
+## Rutas disponibles
+
+El proyecto contiene las siguientes rutas principales:
+
+- `/login`: Pantalla para iniciar sesión o registrarse.
+- `/dashboard`: Vista principal con resumen de la aplicación (esta ruta está protegida).
+- `/destinos`: Módulo lazy loading que muestra los destinos turísticos (protegida).
+- `/boletos`: Módulo lazy loading para mostrar boletos y realizar compras (protegida).
+- `/boleto-destino`: Módulo lazy loading que muestra la relación entre boletos y destinos (protegida).
+- Cualquier otra ruta redirige automáticamente a `/login`.
+
+---
+
+## Cómo funciona la autenticación
+
+La autenticación se maneja mediante un servicio llamado `AuthService` que guarda el estado de login del usuario. Para acceder, se utiliza el usuario `admin` con la contraseña `1234`. Cuando el usuario inicia sesión correctamente, el sistema marca el estado como autenticado.
+
+Las rutas protegidas usan un guard llamado `AuthGuard` que verifica si el usuario está autenticado. Si no lo está, redirige al login. Al cerrar sesión, se limpia el estado y el usuario vuelve a la pantalla de login.
+
+---
+
+## Comunicación entre componentes
+
+El servicio `BoletoService` provee los datos compartidos entre componentes, como boletos y destinos. Los componentes utilizan `ActivatedRoute` para leer parámetros de la URL y mostrar detalles dinámicos según el contexto (por ejemplo, mostrar boletos filtrados o el detalle de uno específico).
+
+Los módulos se cargan bajo demanda (lazy loading) para mejorar el rendimiento y la experiencia de usuario. La comunicación entre componentes se realiza usando servicios y parámetros en rutas, además de bindings y eventos de Angular para pasar información entre componentes padre e hijo.
+
+---
+
+## Cómo contribuir
+
+Para contribuir al proyecto, sigue estos pasos:
+
+1. Clona el repositorio.
+2. Crea una rama nueva para tu desarrollo.
+3. Realiza los cambios o mejoras que necesites.
+4. Haz commits con mensajes claros y descriptivos.
+5. Empuja tu rama al repositorio remoto.
+6. Abre un merge request para revisión y fusión.
+
+---
+
+## Autores
+
+Cedeño Cedeño Jenrrichet Josue
+Villavicencio Moran Fernando Daniel
+Pazmiño Aveiga Patricio Abraham
+Marquez Pazmiño Jaharia Stefania
+
+---
+
+Si tienes alguna duda, puedes abrir un issue en el repositorio o contactarme directamente.
+

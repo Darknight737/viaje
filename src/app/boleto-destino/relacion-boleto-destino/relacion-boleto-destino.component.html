@@ -1,0 +1,16 @@
+<div class="relacion-container">
+  <h2>Relaciones Boleto - Destino</h2>
+
+  <div *ngFor="let destino of destinosConBoletos" class="destino-block">
+    <h3>{{ destino.nombre }}</h3>
+    <ul>
+      <li *ngFor="let boleto of destino.boletos">
+        {{ boleto.ciudad }} - Hora: {{ boleto.hora }} - Precio: ${{ boleto.precio }}
+        <button (click)="comprar(boleto)">Comprar</button>
+      </li>
+    </ul>
+  </div>
+   <div class="volver-dashboard" style="margin-top: 20px; text-align: center;">
+    <a routerLink="/dashboard" class="btn-volver">← Volver al Dashboard</a>
+  </div>
+</div>

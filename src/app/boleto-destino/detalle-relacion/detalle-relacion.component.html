@@ -1,0 +1,12 @@
+<div *ngIf="boleto" class="detalle-container">
+  <h2>¡Feliz viaje!</h2>
+  <div class="boleto-info">
+    <p><strong>Ciudad destino:</strong> {{ boleto.ciudad }}</p>
+    <p><strong>Hora de salida:</strong> {{ boleto.hora }}</p>
+    <p><strong>Precio:</strong> ${{ boleto.precio }}</p>
+    <p><strong>Usuario:</strong> UsuarioEjemplo</p>
+  </div>
+  <p class="mensaje">🧳 Gracias por tu compra. ¡Te deseamos un viaje increíble! 🌍</p>
+</div>
+
+<a routerLink="/dashboard" class="volver-link">← Volver al dashboard</a>

@@ -1,0 +1,8 @@
+<div *ngIf="boletoSeleccionado" class="detalle-container">
+  <h2>Boleto comprado</h2>
+  <p><strong>Ciudad:</strong> {{ boletoSeleccionado.ciudad }}</p>
+  <p><strong>Hora:</strong> {{ boletoSeleccionado.hora }}</p>
+  <p><strong>Precio:</strong> ${{ boletoSeleccionado.precio }}</p>
+  <p><strong>Usuario:</strong> {{ usuarioNombre }}</p>
+  <p class="mensaje-feliz-viaje">¡Feliz viaje!</p>
+</div>

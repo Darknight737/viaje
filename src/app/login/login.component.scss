@@ -1,0 +1,65 @@
+/* en login.component.scss */
+
+$primary-color: #007bff;
+$primary-color-hover: darken($primary-color, 15%);
+$input-border: #ccc;
+$input-border-focus: darken($input-border, 20%);
+$bg-white: #fff;
+$shadow-color: rgba(0, 0, 0, 0.1);
+$text-color: #333;
+
+
+.login-container {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px $shadow-color;
+  background-color: $bg-white;
+
+
+  h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: $text-color;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid $input-border;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+      border-color: $input-border-focus;
+      outline: none;
+    }
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: $primary-color;
+    color: $bg-white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $primary-color-hover;
+    }
+  }
+
+  .link {
+    display: block;
+    margin-top: 15px;
+    text-align: center;
+    color: $primary-color;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}

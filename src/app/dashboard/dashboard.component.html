@@ -1,0 +1,14 @@
+<h2>Bienvenido, {{ nombreUsuario }}</h2>
+
+<nav>
+  <a routerLink="/destinos">Destinos</a> |
+  <a routerLink="/boletos">Boletos</a> |
+  <a routerLink="/boleto-destino">Boleto-Destino</a>
+</nav>
+
+<button (click)="logout()">Cerrar sesión</button>
+
+<hr>
+
+<app-mensaje></app-mensaje>
+<app-mostrar-mensaje></app-mostrar-mensaje>

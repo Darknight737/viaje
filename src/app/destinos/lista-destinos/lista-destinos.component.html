@@ -1,0 +1,17 @@
+<!-- src/app/destinos/lista-destinos/lista-destinos.component.html -->
+<h2>Destinos Disponibles</h2>
+
+<div class="destino-card" *ngFor="let destino of destinos">
+  <img [src]="destino.imagen" alt="{{ destino.ciudad }}">
+  <h3>{{ destino.ciudad }}</h3>
+  <p><strong>Descripción:</strong> {{ destino.descripcion }}</p>
+  <p><strong>Clima:</strong> {{ destino.clima }}</p>
+  <p><strong>Atracciones:</strong></p>
+  <ul>
+    <li *ngFor="let atraccion of destino.atracciones">{{ atraccion }}</li>
+  </ul>
+  <button (click)="comprarBoleto(destino.ciudad)">Comprar Boleto</button>
+</div>
+   <div class="volver-dashboard" style="margin-top: 20px; text-align: center;">
+    <a routerLink="/dashboard" class="btn-volver">← Volver al Dashboard</a>
+  </div>

@@ -1,0 +1,28 @@
+.detalle-container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f0f9ff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 120, 200, 0.2);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+
+  h2 {
+    color: #0078c8;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 18px;
+    margin: 8px 0;
+    color: #333;
+  }
+
+  .mensaje-feliz-viaje {
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #27ae60;
+  }
+}

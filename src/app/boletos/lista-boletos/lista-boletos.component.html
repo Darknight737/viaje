@@ -1,0 +1,19 @@
+<div class="boletos-container">
+  <h2 *ngIf="destinoSeleccionado; else general">Boletos disponibles para {{ destinoSeleccionado }}</h2>
+  <ng-template #general>
+    <h2>Todos los boletos disponibles</h2>
+  </ng-template>
+
+  <div class="boletos-grid">
+    <div class="boleto-card" *ngFor="let boleto of boletos">
+      <h3>{{ boleto.ciudad }}</h3>
+      <p>Hora: {{ boleto.hora }}</p>
+      <p>Precio: ${{ boleto.precio }}</p>
+      <button (click)="comprar(boleto)">Comprar</button>
+    </div>
+  </div>
+
+  <div class="volver-dashboard" style="margin-top: 20px; text-align: center;">
+    <a routerLink="/dashboard" class="btn-volver">← Volver al Dashboard</a>
+  </div>
+</div>
